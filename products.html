@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="products.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to the Geek Store!</h1>
+    <div id="app">
+      <div>
+        <h3>Here is a list of products:</h3>
+        <p v-for="product in products"><strong>Product name:</strong> {{ product.name }}<br><strong>Description:</strong> {{ product.description }}<br><strong>Price:</strong> {{ product.price }}</p>
+      </div>
+      <div>
+        <h3>Feel free to add a product to the store using the fields below:</h3>
+        <input type="text" v-model="name" placeholder="product name"><br>
+        <input type="text" v-model="description" placeholder="product description"><br>
+        <input type="text" v-model="price" placeholder="product price"><br>
+        <input type="text" v-model="image_url" placeholder="product image url"><br>
+        <button v-on:click="productsCreate">Create Product</button>
+      </div>
+    </div>
+  </body>
+</html>
